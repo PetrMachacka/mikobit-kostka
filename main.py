@@ -9,19 +9,18 @@ def on_stěny():
         else:
             basic.show_number(6)
             stěny = 6
+basic.forever(on_stěny)
 def on_můžeš():
     if input.button_is_pressed(Button.A):
             global můžeš
             if můžeš == False:
                 basic.show_icon(IconNames.YES)
                 můžeš = True
-basic.forever(on_stěny)
 basic.forever(on_můžeš)
 def on_forever():
-        global můžeš
+        global můžeš, stěny
         if můžeš == True:
             if input.is_gesture(Gesture.SHAKE):
-                global stěny
                 tecky = randint(1, stěny)
                 if tecky == 1:
                     basic.show_leds(""". . . . .

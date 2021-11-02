@@ -30,7 +30,6 @@ basic.forever(function on_forever() {
     
     if (můžeš == true) {
         if (input.isGesture(Gesture.Shake)) {
-            
             tecky = randint(1, stěny)
             if (tecky == 1) {
                 basic.showLeds(`. . . . .
