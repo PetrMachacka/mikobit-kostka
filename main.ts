@@ -1,26 +1,21 @@
 let sides = 6
 let ready = false
-basic.forever(function on_walls() {
-    if (input.logoIsPressed()) {
+input.onButtonPressed(Button.A, function on_walls() {
+    if (input.buttonIsPressed(Button.A)) {
         
-        if (sides == 6) {
-            sides = 10
-        } else {
-            sides = 6
+        if (sides < 32) {
+            sides += 1
         }
         
         basic.showNumber(sides)
     }
     
 })
-basic.forever(function on_můžeš() {
-    if (input.buttonIsPressed(Button.A)) {
-        
-        if (ready == false) {
-            basic.showIcon(IconNames.Yes)
-            ready = true
-        }
-        
+input.onLogoEvent(TouchButtonEvent.Pressed, function on_můžeš() {
+    
+    if (ready == false) {
+        basic.showIcon(IconNames.Yes)
+        ready = true
     }
     
 })
@@ -50,6 +45,14 @@ basic.forever(function on_forever() {
                 basic.showIcon(IconNames.No)
             } else if (dots == 10) {
                 basic.showIcon(IconNames.Tortoise)
+            } else if (dots == 11) {
+                basic.showNumber(11)
+            } else if (dots == 12) {
+                basic.showNumber(12)
+            } else if (dots == 13) {
+                basic.showNumber(13)
+            } else if (dots == 14) {
+                basic.showNumber(14)
             }
             
             for (let i = 0; i < dots; i++) {
