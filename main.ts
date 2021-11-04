@@ -1,26 +1,24 @@
-let walls = 6
+let sides = 6
 let ready = false
 basic.forever(function on_walls() {
     if (input.logoIsPressed()) {
         
-        if (walls == 6) {
-            basic.showNumber(10)
-            walls = 10
+        if (sides == 6) {
+            sides = 10
         } else {
-            basic.showNumber(6)
-            walls = 6
+            sides = 6
         }
         
+        basic.showNumber(sides)
     }
     
 })
 basic.forever(function on_můžeš() {
-    let můžeš: boolean;
     if (input.buttonIsPressed(Button.A)) {
         
-        if (můžeš == false) {
+        if (ready == false) {
             basic.showIcon(IconNames.Yes)
-            můžeš = true
+            ready = true
         }
         
     }
@@ -28,11 +26,10 @@ basic.forever(function on_můžeš() {
 })
 basic.forever(function on_forever() {
     let dots: number;
-    let můžeš: boolean;
     
-    if (můžeš == true) {
+    if (ready == true) {
         if (input.isGesture(Gesture.Shake)) {
-            dots = randint(1, walls)
+            dots = randint(1, sides)
             if (dots == 1) {
                 basic.showLeds(". . . . .. . . . .. . # . .. . . . .. . . . . ")
             } else if (dots == 2) {
@@ -44,9 +41,15 @@ basic.forever(function on_forever() {
             } else if (dots == 5) {
                 basic.showLeds("# . . . #. . . . .. . # . .. . . . .# . . . #")
             } else if (dots == 6) {
-                basic.showIcon(IconNames.SmallHeart)
+                basic.showLeds("# . . . # . . . . .# . . . #. . . . .# . . . #")
             } else if (dots == 7) {
-                basic.showIcon(IconNames.Happy)
+                basic.showLeds(`
+                    # . . . #
+                    . . . . .
+                    # . # . #
+                    . . . . .
+                    # . . . #
+                    `)
             } else if (dots == 8) {
                 basic.showIcon(IconNames.SmallSquare)
             } else if (dots == 9) {
@@ -59,7 +62,7 @@ basic.forever(function on_forever() {
                 music.playTone(Note.D, music.beat())
                 music.rest(music.beat(1.5))
             }
-            můžeš = false
+            ready = false
         }
         
     }
