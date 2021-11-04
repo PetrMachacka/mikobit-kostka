@@ -37,19 +37,13 @@ basic.forever(function on_forever() {
             } else if (dots == 3) {
                 basic.showLeds(". . . . # . . . . .. . # . .. . . . .# . . . .")
             } else if (dots == 4) {
-                basic.showIcon(IconNames.SmallDiamond)
+                basic.showLeds("# . . . #. . . . .. . . . .. . . . .# . . . #")
             } else if (dots == 5) {
                 basic.showLeds("# . . . #. . . . .. . # . .. . . . .# . . . #")
             } else if (dots == 6) {
                 basic.showLeds("# . . . # . . . . .# . . . #. . . . .# . . . #")
             } else if (dots == 7) {
-                basic.showLeds(`
-                    # . . . #
-                    . . . . .
-                    # . # . #
-                    . . . . .
-                    # . . . #
-                    `)
+                basic.showLeds("# . . . #. . . . .# . # . #. . . . .# . . . #")
             } else if (dots == 8) {
                 basic.showIcon(IconNames.SmallSquare)
             } else if (dots == 9) {

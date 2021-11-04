@@ -28,19 +28,13 @@ def on_forever():
                 elif dots == 3:
                     basic.show_leds(""". . . . # . . . . .. . # . .. . . . .# . . . .""")
                 elif dots == 4:
-                    basic.show_icon(IconNames.SMALL_DIAMOND)
+                    basic.show_leds("""# . . . #. . . . .. . . . .. . . . .# . . . #""")
                 elif dots == 5:
                     basic.show_leds("""# . . . #. . . . .. . # . .. . . . .# . . . #""")
                 elif dots == 6:
                     basic.show_leds("""# . . . # . . . . .# . . . #. . . . .# . . . #""")
                 elif dots == 7:
-                    basic.show_leds("""
-                    # . . . #
-                    . . . . .
-                    # . # . #
-                    . . . . .
-                    # . . . #
-                    """)
+                    basic.show_leds("""# . . . #. . . . .# . # . #. . . . .# . . . #""")
                 elif dots == 8:
                     basic.show_icon(IconNames.SMALL_SQUARE)
                 elif dots == 9:
